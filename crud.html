@@ -1,174 +1,387 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Crave Corner Food Blog</title>
+  <title>Crave Corner</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
-
     body {
-      background-color: #b5a88a;
-      color: #333;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #fff8e7;
     }
 
-      .navbar {
+    .navbar {
+      background: #cc6600;
+      padding: 10px;
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      background-color: #9f685e;
-      padding: 15px 10%;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    .navbar .logo {
-      font-size: 24px;
       color: white;
-      font-weight: bold;
     }
 
-    .navbar ul {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-    }
-
-    .navbar ul li a {
+    .navbar a {
+      color: white;
+      margin: 0 10px;
       text-decoration: none;
-      color: rgb(242, 235, 235);
-      font-size: 16px;
-      transition: color 0.3s;
     }
 
-    .navbar ul li a:hover,
-    .navbar ul li a.active {
-      color: #ffe4c4;
-    }
-
-   
     .hero {
       text-align: center;
-      padding: 60px 20px;
-      background: #fff0e6;
-    }
-
-    .hero h1 {
-      font-size: 40px;
-      margin-bottom: 10px;
-    }
-
-    .hero p {
-      font-size: 18px;
-      margin-bottom: 20px;
+      padding: 40px;
+      background: #fff0d6;
     }
 
     .hero button {
-      padding: 12px 24px;
-      background-color: #cb9288;
+      padding: 10px 20px;
+      background: #ff9966;
       color: white;
       border: none;
-      border-radius: 8px;
       cursor: pointer;
-      font-size: 16px;
     }
-
-    .hero button:hover {
-      background-color: #dfcfcd;
-    }
-
 
     .recipes {
-      padding: 40px 10%;
       text-align: center;
-    }
-
-    .recipes h2 {
-      font-size: 28px;
-      margin-bottom: 30px;
-    }
-
-    .recipe-list {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
+      padding: 20px;
     }
 
     .recipe-card {
-      background-color: #ce9797;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      overflow: hidden;
-      width: 250px;
-      transition: transform 0.2s;
+      background: #ffe0cc;
+      margin: 10px;
+      padding: 10px;
+      display: inline-block;
+      width: 200px;
     }
 
-    .recipe-card:hover {
-      transform: scale(1.05);
+    .popup {
+      display: none;
+      position: fixed;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -30%);
+      background: white;
+      padding: 20px;
+      border: 1px solid #aaa;
+      box-shadow: 0 0 10px #aaa;
     }
 
-    .recipe-card img {
-      width: 100%;
-      height: 170px;
-      object-fit: cover;
+    .popup .close {
+      color: red;
+      float: right;
+      cursor: pointer;
     }
-
-    .recipe-card h3 {
-      padding: 15px;
-      font-size: 18px;
-    }
-
- 
-
-
- 
   </style>
 </head>
 <body>
- <nav class="navbar">
-    <div class="logo"> Crave Corner</div>
-    <ul>
-      <li><a href="#" class="active">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-  </nav>
-  <section class="hero">
-    <h1>Feed your cravings!</h1>
-    <p>A Bite of Joy,Everyday!</p>
-    <button onclick="showPopup()">Recipe Spotlight</button>
-  </section>
-  <section class="recipes">
-    <h2>Crave Corner Favourites</h2>
-    <div class="recipe-list">
-      <div class="recipe-card">
-        <img src="Paneer-Butter-Masala.png" alt="Panner Butter Masala">
-        <h3>Panner Butter Masala</h3>
-      </div>
-      <div class="recipe-card">
-        <img src="" alt="Spicy Pizza">
-        <h3>Spicy Pizza</h3>
-      </div>
-      <div class="recipe-card">
-        <img src="" alt="Rasmalai">
-        <h3>Rasmalai</h3>
-      </div>
-    </div>
-  </section>
-  <div class="popup" id="popup">
-    <div class="popup-content">
-      <span class="close-btn" onclick="closePopup()">&times;</span>
-      <h2> Recipe Spotlight</h2>
-      <p><strong>Mexican Veg Tacos</strong></p>
-      <p>Crispy tacos filled with fresh veggies, beans, and spicy sauce!</p>
+
+  <div class="navbar">
+    <div><strong>Crave Corner</strong></div>
+    <div>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
     </div>
   </div>
-</body>
-</html>
+
+  <div class="hero">
+    <h1>Feed your cravings</h1>
+    <p>A Bite of Joy,Everyday!</p>
+    <button onclick="showPopup()">Recipe Spotlight</button>
+  </div>
+
+  <div class="recipes">
+    <h2>Crave Corner Favourites</h2>
+    <div class="recipe-card">
+      <h3>Paneer Butter Masala</h3>
+    </div>
+    <div class="recipe-card">
+      <h3>Spicy Pizza</h3>
+    </div>
+    <div class="recipe-card">
+      <h3>Rasmalai</h3>
+    </div>
+  </div>
+
+  <div class="popup" id="popup">
+    <span class="close" onclick="closePopup()">X</span>
+    <h3>Recipe Spotlight</h3>
+    <p>"Creamy Paneer Butter Masala, fiery Spicy Pizza, and sweet, chilled Rasmalai – a perfect trio to satisfy every craving!"</p>
+  </div>
+
+  <script>
+    function showPopup() {
+      document.getElementById("popup").style.display = "block";
+    }
+
+    function closePopup() {
+      document.getElementById("popup").style.display = "none";
+    }
+  </script>
+
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #fff8e7;
+      color: #333;
+    }
+
+    .navbar {
+      background: #cc6600;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .navbar a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .about-section {
+      text-align: center;
+      padding: 60px 20px;
+      background: #fff0d6;
+    }
+
+    .about-section h1 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    .about-section p {
+      font-size: 18px;
+      max-width: 600px;
+      margin: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    
+    <a href="about.html">About</a>
+    
+  </div>
+
+  <div class="about-section">
+    <h1>About This Site</h1>
+    <p>This site was built to demonstrate CRUD Operations using only HTML, CSS, and JavaScript. It's a simple and creative way to manage application data while showcasing tasty food recipes!</p>
+  </div>
+
+
+  <style>
+   <style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #fff8e7;
+    color: #333;
+  }
+
+  .navbar {
+    background: #cc6600;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .navbar a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 18px;
+  }
+
+  .contact-section {
+    padding: 60px 20px;
+    text-align: center;
+    background: #fff0d6;
+  }
+
+  .contact-section h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+
+  .contact-info {
+    background: #ffe0cc;
+    display: inline-block;
+    padding: 20px;
+    border-radius: 8px;
+    font-size: 18px;
+    line-height: 1.8;
+  }
+</style>
+
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <div class="contact-section">
+    <h1>Contact Us</h1>
+    <div class="contact-info">
+      📧 <strong>Email:</strong> cravecorner@gmail.com<br>
+      📞 <strong>Phone:</strong> +91 99806856466
+    </div>
+  </div>
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <title>Contact - Crave Corner</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background: #fff8e7;
+        color: #333;
+      }
+  
+      .navbar {
+        background: #cc6600;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+      }
+  
+      .navbar a {
+        color: white;
+        margin: 0 15px;
+        text-decoration: none;
+        font-size: 18px;
+      }
+  
+      .contact-section {
+        padding: 50px 20px;
+        text-align: center;
+        background: #fff0d6;
+      }
+  
+      .contact-section h1 {
+        font-size: 32px;
+        margin-bottom: 20px;
+      }
+  
+      .contact-form {
+        max-width: 500px;
+        margin: auto;
+        text-align: left;
+        background: #ffe0cc;
+        padding: 20px;
+        border-radius: 8px;
+      }
+  
+      .contact-form label {
+        display: block;
+        margin: 10px 0 5px;
+      }
+  
+      .contact-form input,
+      .contact-form textarea {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+  
+      .contact-form button {
+        background-color: #cc6600;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+  
+      .contact-form button:hover {
+        background-color: #e67300;
+      }
+  
+      .success-message {
+        text-align: center;
+        color: green;
+        margin-top: 20px;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+  
+    <div class="navbar">
+   
+   
+      <!DOCTYPE html>
+      <html lang="en">
+      <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Form Submission</title>
+      </head>
+      <body>
+      
+        <h2>Contact Form</h2>
+      
+        <form id="contactForm">
+          <label for="name">Name:</label>
+          <input type="text" id="name" placeholder="Enter your name"><br>
+      
+          <label for="email">Email:</label>
+          <input type="email" id="email" placeholder="Enter your email"><br>
+      
+          <label for="address">Address:</label>
+          <input type="text" id="address" placeholder="Enter your address"><br>
+      
+          <label for="dob">Date of Birth:</label>
+          <input type="date" id="dob"><br>
+      
+          <label for="message">Message:</label>
+          <textarea id="message" placeholder="Enter your message"></textarea><br>
+      
+          <button type="button" onclick="submitForm()">Submit</button>
+        </form>
+      
+        <div id="successMessage" style="display: none;">
+          <h3>Form Submitted Successfully!</h3>
+          <p>Name: <span id="displayName"></span></p>
+          <p>Email: <span id="displayEmail"></span></p>
+          <p>Address: <span id="displayAddress"></span></p>
+          <p>Date of Birth: <span id="displayDob"></span></p>
+          <p>Message: <span id="displayMessage"></span></p>
+        </div>
+      
+        <script>
+          function submitForm() {
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+            const address = document.getElementById('address').value.trim();
+            const dob = document.getElementById('dob').value.trim();
+      
+            if (name && email && message && address && dob) {
+              document.getElementById('displayName').textContent = name;
+              document.getElementById('displayEmail').textContent = email;
+              document.getElementById('displayAddress').textContent = address;
+              document.getElementById('displayDob').textContent = dob;
+              document.getElementById('displayMessage').textContent = message;
+      
+              document.getElementById('successMessage').style.display = 'block';
+            } else {
+              alert('Please fill in all fields.');
+            }
+          }
+        </script>
+      
+      </body>
+      </html>
+      
+
+  
+  </body>
+  </html>
+  
