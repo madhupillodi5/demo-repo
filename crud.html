@@ -3,9 +3,14 @@
 <head>
   <title>Crave Corner</title>
   <style>
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>Crave Corner</title>
+  <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: sans-serif;
       background: #fff8e7;
       color: #333;
     }
@@ -17,31 +22,33 @@
     }
 
     .navbar a {
-      color: white;
-      margin: 0 15px;
+      color: #fff;
+      margin: 0 10px;
       text-decoration: none;
-      font-size: 18px;
+      font-weight: bold;
     }
 
     .section {
-      text-align: center;
       padding: 40px 20px;
+      text-align: center;
       background: #fff0d6;
     }
 
-    .hero button {
+    .hero button,
+    .contact-form button {
       padding: 10px 20px;
-      background: #ff9966;
+      background: #cc6600;
       color: white;
       border: none;
       cursor: pointer;
+      border-radius: 4px;
     }
 
     .recipe-card {
       background: #ffe0cc;
+      display: inline-block;
       margin: 10px;
       padding: 10px;
-      display: inline-block;
       width: 200px;
       border-radius: 8px;
     }
@@ -52,60 +59,53 @@
       top: 30%;
       left: 50%;
       transform: translate(-50%, -30%);
-      background: white;
+      background: #fff;
       padding: 20px;
       border: 1px solid #aaa;
       box-shadow: 0 0 10px #aaa;
     }
 
     .popup .close {
-      color: red;
       float: right;
+      color: red;
+      font-weight: bold;
       cursor: pointer;
     }
 
     .contact-form {
       max-width: 500px;
       margin: auto;
-      text-align: left;
       background: #ffe0cc;
       padding: 20px;
       border-radius: 8px;
+      text-align: left;
     }
 
     .contact-form label {
       display: block;
-      margin: 10px 0 5px;
+      margin-top: 10px;
     }
 
     .contact-form input,
     .contact-form textarea {
       width: 100%;
       padding: 8px;
-      margin-bottom: 15px;
+      margin-top: 5px;
       border: 1px solid #ccc;
       border-radius: 4px;
     }
 
-    .contact-form button {
-      background-color: #cc6600;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-
     .success-message {
-      text-align: center;
-      color: green;
-      margin-top: 20px;
       display: none;
+      margin-top: 20px;
+      color: green;
+      text-align: center;
     }
   </style>
 </head>
 <body>
-
+</head>
+<body>
   <div class="navbar">
     <a href="#">Home</a>
     <a href="#about">About</a>
@@ -196,7 +196,6 @@
       }
     }
   </script>
-
 </body>
 </html>
 
