@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Crave Corner Food Blog</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-color: #b5a88a;
+      color: #333;
+    }
+
+      .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #9f685e;
+      padding: 15px 10%;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar .logo {
+      font-size: 24px;
+      color: white;
+      font-weight: bold;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .navbar ul li a {
+      text-decoration: none;
+      color: rgb(242, 235, 235);
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+
+    .navbar ul li a:hover,
+    .navbar ul li a.active {
+      color: #ffe4c4;
+    }
+
+   
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+      background: #fff0e6;
+    }
+
+    .hero h1 {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .hero button {
+      padding: 12px 24px;
+      background-color: #cb9288;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .hero button:hover {
+      background-color: #dfcfcd;
+    }
+
+
+    .recipes {
+      padding: 40px 10%;
+      text-align: center;
+    }
+
+    .recipes h2 {
+      font-size: 28px;
+      margin-bottom: 30px;
+    }
+
+    .recipe-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .recipe-card {
+      background-color: #ce9797;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      overflow: hidden;
+      width: 250px;
+      transition: transform 0.2s;
+    }
+
+    .recipe-card:hover {
+      transform: scale(1.05);
+    }
+
+    .recipe-card img {
+      width: 100%;
+      height: 170px;
+      object-fit: cover;
+    }
+
+    .recipe-card h3 {
+      padding: 15px;
+      font-size: 18px;
+    }
+
+ 
+
+
+ 
+  </style>
+</head>
+<body>
+ <nav class="navbar">
+    <div class="logo"> Crave Corner</div>
+    <ul>
+      <li><a href="#" class="active">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+  <section class="hero">
+    <h1>Feed your cravings!</h1>
+    <p>A Bite of Joy,Everyday!</p>
+    <button onclick="showPopup()">Recipe Spotlight</button>
+  </section>
+  <section class="recipes">
+    <h2>Crave Corner Favourites</h2>
+    <div class="recipe-list">
+      <div class="recipe-card">
+        <img src="Paneer-Butter-Masala.png" alt="Panner Butter Masala">
+        <h3>Panner Butter Masala</h3>
+      </div>
+      <div class="recipe-card">
+        <img src="" alt="Spicy Pizza">
+        <h3>Spicy Pizza</h3>
+      </div>
+      <div class="recipe-card">
+        <img src="" alt="Rasmalai">
+        <h3>Rasmalai</h3>
+      </div>
+    </div>
+  </section>
+  <div class="popup" id="popup">
+    <div class="popup-content">
+      <span class="close-btn" onclick="closePopup()">&times;</span>
+      <h2> Recipe Spotlight</h2>
+      <p><strong>Mexican Veg Tacos</strong></p>
+      <p>Crispy tacos filled with fresh veggies, beans, and spicy sauce!</p>
+    </div>
+  </div>
+</body>
+</html>
