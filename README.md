@@ -1,6 +1,2 @@
-# Demo 
-
-Github introduction video!
-intro
-To learn node.js,javascript
-java
+# demo_remo
+demo intro video
